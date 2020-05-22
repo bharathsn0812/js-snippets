@@ -14,12 +14,12 @@
 
 <body>
     <div class="text-center">
-        <h1>Count Alpha-Numeric characters</h1>
+        <h1>Alpha-Numeric character counter</h1>
     </div>
 
     <div class="container margintop-5em" id="app">
         <div class="input-group text-center margin-0auto">
-            <span>Enter Alpha Numeric String: </span>
+            <span>Enter Alpha Numeric string: </span>
             <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                 placeholder="AnsweRs4you" v-model="alphanumericCharacter">
             <br>
@@ -36,7 +36,7 @@
     const vueApp = new Vue({
         el: '#app',
         data: {
-            alphanumericCharacter: '',
+            alphanumericCharacter: 'AnsweRs4you',
             results: ''
         },
         methods: {
