@@ -23,7 +23,7 @@
             <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                 placeholder="AnsweRs4you" v-model="alphanumericCharacter">
             <br>
-            <span class="btn btn-primary btn-sm" v-on:click="calculate">Count</span>
+            <span class="btn btn-primary btn-sm" v-on:click="count">Count</span>
         </div>
         <template v-if="results" v-for="(value, key) in results">
             <div class="text-center">
@@ -40,7 +40,7 @@
             results: ''
         },
         methods: {
-            calculate: function (event) {
+            count: function (event) {
                 this.results = alphanumericCharCount(this.alphanumericCharacter)
             }
         }
