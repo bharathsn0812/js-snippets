@@ -20,17 +20,14 @@
     <div class="container margintop-5em" id="app">
         <div class="input-group text-center margin-0auto">
             <span>Enter Alpha Numeric String: </span>
-            <input type="text" class="form-control" 
-                aria-label="Small"
-                aria-describedby="inputGroup-sizing-sm" 
-                placeholder="AnsweRs4you" 
-                v-model="alphanumericCharacter">
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                placeholder="AnsweRs4you" v-model="alphanumericCharacter">
             <br>
             <span class="btn btn-primary btn-sm" v-on:click="calculate">Count</span>
         </div>
-        <template>
-            <div v-if="results" class="margintop-2em text-center">
-                {{ JSON.stringify(results) }}
+        <template v-if="results" v-for="(value, key) in results">
+            <div class="text-center">
+                {{ key }} : {{ value }}
             </div>
         </template>
     </div>
@@ -54,11 +51,14 @@
     .margintop-2em {
         margin-top: 2em;
     }
+
     .margintop-5em {
         margin-top: 5em;
     }
+
     .margin-0auto {
         margin: 0 auto;
     }
 </style>
+
 </html>
