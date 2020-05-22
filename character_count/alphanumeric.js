@@ -7,5 +7,3 @@ function alphanumericCharCount (str) {
   }
   return obj
 }
-
-console.log(alphanumericCharCount('6bv337cca7'))
