@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>String Compare</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="validator.js"></script>
+</head>
+
+<body>
+    <div class="text-center">
+        <h1>Check Anagram</h1>
+        <small>word, phrase, or name formed by rearranging the letters of another, such as spar, formed from rasp.</small>
+    </div>
+
+    <div class="container margintop-5em" id="app">
+        <div class="input-group text-center margin-0auto">
+            <span>Enter data for first string</span>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                placeholder="one" v-model="str1" v-on:keyup="compare">
+            <br>
+
+            <span>Enter data for second string</span>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                placeholder="eno" v-model="str2" v-on:keyup="compare">
+            <br>
+        </div>
+        <div class="text-center">
+            is valid Anagram: <b>{{ result }}</b>
+        </div>
+    </div>
+</body>
+<script>
+    const vueApp = new Vue({
+        el: '#app',
+        data: {
+            str1: 'one',
+            str2: 'eno',
+            result: ''
+        },
+        mounted() {
+            this.result = validateAnagram(this.str1, this.str2)
+        },
+        methods: {
+            compare: function (event) {
+                this.result = validateAnagram(this.str1, this.str2)
+            }
+        }
+    })
+</script>
+
+<style>
+    .margintop-2em {
+        margin-top: 2em;
+    }
+
+    .margintop-5em {
+        margin-top: 5em;
+    }
+
+    .margin-0auto {
+        margin: 0 auto;
+    }
+</style>
+
+</html>
